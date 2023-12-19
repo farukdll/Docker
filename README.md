@@ -43,6 +43,10 @@
     * ###### Containers are isolated working environments at the operating system level. Each Container contains everything an application or service needs to run: files, libraries, settings and other components necessary for the application to run.
     * ###### This isolation allows each Container to run independently of the others. That is, the application in one Container does not affect the application in another Container. This makes it possible to run applications in a more secure, portable and efficient way.
     * ###### Containers enable developers to avoid compatibility issues when moving their applications to different environments. They also make software development processes more efficient by enabling faster deployment, scaling and management.
+    <h1 align="center">
+    <p>
+        <img height="210" width="750" src="https://github.com/farukdll/Docker/assets/97880185/6852b36d-6e4e-4b3a-bd79-ee5b2f6ed855">
+    </h1> <p> </p>
   * ###### What is Hypervisor (VM) ? <a name="wihvm"></a>
     * ###### Hypervisor is software or hardware that allows you to run different operating systems in isolation by creating virtual machines on physical hardware. It allows you to run multiple operating systems simultaneously by dividing a physical machine with virtual machines.
     * ###### Hypervisor (VM) Examples:
@@ -51,6 +55,10 @@
       * ###### Oracle VM VirtualBox: User-friendly and can run on a variety of operating systems.
       * ###### Citrix Hypervisor (XenServer): A hypervisor offering scalable cloud solutions.
       * ###### KVM (Kernel-based Virtual Machine): An open source Hypervisor based on Linux.
+    <h1 align="center">
+    <p>
+        <img height="210" width="750" src="https://github.com/farukdll/Docker/assets/97880185/06dc5685-faa4-44bd-bec4-e48b3065238a">
+    </h1> <p> </p>
   * ###### Differences and Advantages of Containers and Hypervisors <a name="daaocah"></a>
     * ###### Differences :
       * ###### Containers:
@@ -66,8 +74,11 @@
       * ###### Hypervisors:
         * ###### They offer a more secure environment by providing complete isolation but consume more resources.
         * ###### They support different operating systems, making them easy to use on various platforms.
-
-
+    <h1 align="center">
+    <p>
+        <!--<img height="300" width="390" src="https://github.com/farukdll/Docker/assets/97880185/b5779ae8-a04f-4d67-ab32-6ef884a5ffed">-->
+        <img height="350" width="500" src="https://github.com/farukdll/Docker/assets/97880185/05bb9133-ab56-4ee4-9400-f813d036b74c">
+    </h1> <p> </p>
 
 
 |[ ⬆︎  Up](#up)|
