@@ -17,8 +17,10 @@
    * [What is a Container ?](#wiac)
    * [What is Hypervisor (VM) ?](#wihvm)
    * [Differences and Advantages of Containers and Hypervisors](#daaocah)
-3. [](#)
-   * [](#)
+3. [What are Docker Engine and Tools?](#wadeat)
+   * [What is the Docker Engine ?](#witaee)
+   * [What is a Docker Daemon ?](#wiaddd)
+   * [What is Docker CLI (Command Line Interface) ?](#widclicli)
 4. [](#)
    * [](#)
 
@@ -76,9 +78,30 @@
         * ###### They support different operating systems, making them easy to use on various platforms.
     <h1 align="center">
     <p>
-        <!--<img height="300" width="390" src="https://github.com/farukdll/Docker/assets/97880185/b5779ae8-a04f-4d67-ab32-6ef884a5ffed">-->
         <img height="350" width="500" src="https://github.com/farukdll/Docker/assets/97880185/05bb9133-ab56-4ee4-9400-f813d036b74c">
     </h1> <p> </p>
+
+
+#### What are Docker Engine and Tools? <a name="wadeat"></a>
+  * ###### What is the Docker Engine ? <a name="witaee"></a>
+    * ###### Docker Engine is an open source container technology for building your applications. It is the bridge between the operating system and the image, i.e. Docker itself. When we use a Docker command through the Docker CLI, the Docker Engine is contacted to do what needs to be done. Docker Engine is the part where we set the entire lifecycle and limitations of the container. Thanks to Docker Daemon, containers work in the same environment in isolation from each other.
+    <h1 align="center">
+    <p>
+        <img height="300" width="700" src="https://github.com/farukdll/Docker/assets/97880185/5469eb17-1138-4661-9e07-62513fd981e8">
+    </h1> <p> </p>
+  * ###### What is a Docker Daemon ? <a name="wiaddd"></a>
+    * ###### Docker Daemon is the core component of Docker that runs in the background. It receives and processes Docker commands. That is, it accepts Docker commands and enables the creation, stopping and management of containers. This creates the necessary environments for containers to run in isolation.
+    * ###### Docker Daemon is the docker equivalent of Hypervisor. is the section where all operating system-related tasks such as CPU, RAM, etc., are handled.
+    <h1 align="center">
+    <p>
+        <img height="350" width="500" src="https://github.com/farukdll/Docker/assets/97880185/24cf7360-a383-441a-bacb-9caee183eb52">
+    </h1> <p> </p>
+  * ###### What is Docker CLI (Command Line Interface) ? <a name="widclicli"></a>
+    * ###### Docker CLI (Command Line Interface) is the interface that allows us to use Docker via the command line. Users can perform various functions of Docker by typing Docker commands into the terminal or command client. These commands allow us to perform Docker's operations such as creating, running, stopping, deleting containers.
+
+
+
+
 
 
 |[ ⬆︎  Up](#up)|
