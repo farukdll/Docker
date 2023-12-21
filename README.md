@@ -21,8 +21,10 @@
    * [What is the Docker Engine ?](#witaee)
    * [What is a Docker Daemon ?](#wiaddd)
    * [What is Docker CLI (Command Line Interface) ?](#widclicli)
-4. [](#)
-   * [](#)
+4. [What is Dockerfile Structure and Image ?](#widsai)
+   * [What is Dockerfile Structure and What are its Features ?](#widsawaif)
+   * [What is Docker Image ?](#widiii)
+   * [Creating and Managing Docker Images](#camdi)
 
 
 #### What is Docker and Why Do We Need It ? <a name="widawdwni"></a>
@@ -82,7 +84,7 @@
     </h1> <p> </p>
 
 
-#### What are Docker Engine and Tools? <a name="wadeat"></a>
+#### What are Docker Engine and Tools ? <a name="wadeat"></a>
   * ###### What is the Docker Engine ? <a name="witaee"></a>
     * ###### Docker Engine is an open source container technology for building your applications. It is the bridge between the operating system and the image, i.e. Docker itself. When we use a Docker command through the Docker CLI, the Docker Engine is contacted to do what needs to be done. Docker Engine is the part where we set the entire lifecycle and limitations of the container. Thanks to Docker Daemon, containers work in the same environment in isolation from each other.
     <h1 align="center">
@@ -100,8 +102,94 @@
     * ###### Docker CLI (Command Line Interface) is the interface that allows us to use Docker via the command line. Users can perform various functions of Docker by typing Docker commands into the terminal or command client. These commands allow us to perform Docker's operations such as creating, running, stopping, deleting containers.
 
 
-
-
+#### What is Dockerfile Structure and Image ? <a name="widsai"></a>
+  * ###### What is Dockerfile Structure and What are its Features ? <a name="widsawaif"></a>
+    * ###### Dockerfile is a text-based file that describes how to create Docker images step by step. Each line contains a command or directive.
+    <h1 align="center">
+    <p>
+        <img height="200" width="650" src="https://github.com/farukdll/Docker/assets/97880185/e276e48c-0035-4803-9616-42c742672a61">
+    </h1> <p> </p>
+    
+    * ###### FROM Command:
+      * ###### Located at the beginning of the Dockerfile. It specifies from which `base image`  the image will be created. For example, `FROM ubuntu:latest`  indicates that an Ubuntu-based image will be used.
+    * ###### RUN Command:
+      * ###### Specifies commands to run when creating  a Docker image. These commands are run inside the image and are used to accomplish a specific state. For example, the `RUN apt-get`  update command updates the package list.
+    * ###### COPY and ADD Commands:
+      * ###### It is used to copy files or directories from the host machine to the Docker image. While the `COPY`  command is used to copy files, the `ADD`  command can copy files and perform additional operations such as downloading files from a URL.
+    * ###### CMD and ENTRYPOINT Commands:
+      * ###### Specifies the commands to run when the created Docker container is started. `CMD`  specifies the default commands when starting the container, while `ENTRYPOINT`  specifies the commands to run with an argument.
+    * ###### ENV Command:
+      * ###### Used to define environment variables. This command sets the values of environment variables in the Docker image.
+  * ###### What is Docker Image ? <a name="widiii"></a>
+    * ###### A Docker Image is a structure that contains all the components required for the application or system you want to run. This includes the operating system, application code, libraries and other dependencies. They are created using Dockerfile and each has its own layers. These layers extend a base structure and can be shared on platforms like Docker Hub or you can create your own custom images.
+    <h1 align="center">
+    <p>
+        <img height="200" width="650" src="https://github.com/farukdll/Docker/assets/97880185/e276e48c-0035-4803-9616-42c742672a61">
+    </h1> <p> </p>
+    
+    * ###### You can access the Docker Image list from this link (DockerHub Official Site)
+      * ###### [🢣 Click-Here 🢢](https://hub.docker.com/search?q=&type=image)
+    * ###### Docker Image commands:
+      * ###### The `docker images`  is used to list the Docker images available locally on your computer. When this command is run, all images on the system are listed, depending on the Docker Engine.
+        ```
+        docker images
+        ```
+      * ###### The `docker pull imageName`  is used to download the specified image (such as `nginx` ) from the Docker Hub or the specified Docker Registry to your local machine.
+        ```
+        docker pull imageName (nginx)
+        ```
+      * ###### The `docker run -d imageName`  is used with the `-d`  flag to run the specified image in the background. That is, it creates a new container in Docker to run the specified image.
+        ```
+        docker run -d imageName
+        ```
+      * ###### `imageID/imageName`  represents the current image and `tagName`  represents the new tag. In this way, the same image can be assigned different tags and given more descriptive names for different versions or situations.
+        ```
+        docker image tag imageID/imageName tagName
+        ```
+      * ###### `docker image push imageName:tagName`  is used to upload the specified image to a remote repository such as Docker Registry or Docker Hub. `imageName:tagName`  specifies the name and tag of the image to be sent. With this command, you can upload a local image to a remote repository to share it and make it accessible to users.
+        ```
+        docker image push imageName:tagName
+        ```
+      * ###### `docker image push --all-tags imageName`  is used to push all tags of the specified image to a remote repository such as a Docker Registry or Docker Hub. The `--all-tags`  flag ensures to push all tags of the image. This allows you to transfer different versions of a given image to a remote repository in a single operation.
+        ```
+        docker image push --all-tags imageName
+        ```
+      * ###### The `docker image push --all-tags farukdll/counter-app`  is used to push a Docker image with all tags named "farukdll/counter-app" to a remote Docker Registry or Docker Hub. That is, all versions or tags of the specified image are transferred to a remote repository.
+        ```
+        docker image push --all-tags farukdll/counter-app
+        ```
+      * ###### The `docker image tag counter-app farukdll/counter-app`  assigns a new tag "farukdll/counter-app" to a Docker image named "counter-app". That is, it is used to add a new name or label to an existing image. In this way, the same image can be identified with different tags and used in different environments.
+        ```
+        docker image tag counter-app farukdll/counter-app
+        ```
+      * ###### The `docker rmi imageName`  is used to delete an image with a name specified in Docker. The name or ID of the image to be deleted is specified with the command. This command will permanently delete the specified image.
+        ```
+        docker rmi imageName
+        ```
+      * ###### The `docker build -t imageName path/to/Dockerfile`  is used to create Docker images. This command creates an image by following the steps specified in the file called Dockerfile. It is typically used to convert project files into an image. The `-t`  flag allows you to give the created image a name. `imageName`  is the name of the image to be created. `path/to/Dockerfile`  specifies the path to the Dockerfile.
+        ```
+        docker build -t imageName path/to/Dockerfile
+        ```
+      * ###### `docker history imageName`  is a command that shows the layers of a Docker image and how each layer is built. `imageName`  is the name of the Docker image you want to operate on.
+        ```
+        docker history imageName
+        ```
+      * ###### `docker inspect objectName`  is a command that allows you to get detailed information about Docker objects. `objectName` is the name or ID of the Docker object you want to get information about (for example, container name, image name or ID).
+        ```
+        docker inspect objectName
+        ```
+      * ###### The `docker save -o outputFileName.tar imageName`  , `docker save`, is a command used to convert Docker images to an archive file. This command is used to export images and move them to a different environment (for example, to another Docker installation or a server). `-o outputFileName.tar`  is the name and extension of the file where the exported images will be saved. `imageName`  is the name or ID of the Docker image to be exported.
+      * ###### This command saves the specified image by converting it to a .tar archive file. You can then upload this archive file to another Docker environment with the `docker load`  command.
+        ```
+        docker save -o outputFileName.tar imageName
+        ```
+      * ###### `docker load -i imageTarFile.tar`  - `docker load`  and `docker save`  is used to load Docker images exported with into a Docker daemon. `-i imageTarFile.tar`  is the name of the .tar archive file containing the images you want to load.
+      * ###### The `docker save`  ,takes the previously exported images and uploads them to your Docker environment. This way you can move images between different Docker environments or between servers.
+        ```
+        docker load -i imageTarFile.tar
+        ```
+  * ###### Creatings and Managings Docker Images <a name="camdi"></a>
+      * ###### Docker images are created through text files called Dockerfiles. These files specify how to assemble the operating system, libraries, dependencies and other components that the application needs. Using the Docker CLI (Command Line Interface), these Dockerfiles are processed with the build command and the image is created. The created images are managed by the Docker daemon. These images can be stored locally or shared in remote storage areas such as Docker Hub. Also, images can be listed, deleted, updated and managed with Docker CLI.
 
 
 |[ ⬆︎  Up](#up)|
