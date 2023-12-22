@@ -138,7 +138,7 @@
         ```
         docker pull imageName (nginx)
         ```
-      * ###### The `docker run -d imageName`  is used with the `-d`  flag to run the specified image in the background. That is, it creates a new container in Docker to run the specified image.
+      * ###### `docker run -d imageName`  is used to run the specified image in the background using the -d flag. That is, it creates a new container in Docker to run the specified image.
         ```
         docker run -d imageName
         ```
@@ -174,12 +174,12 @@
         ```
         docker history imageName
         ```
-      * ###### `docker inspect objectName`  is a command that allows you to get detailed information about Docker objects. `objectName` is the name or ID of the Docker object you want to get information about (for example, container name, image name or ID).
+      * ###### `docker inspect objectName`  is a command that allows you to get detailed information about Docker objects. `objectName`  is the name or ID of the Docker object you want to get information about (for example, container name, image name or ID).
         ```
         docker inspect objectName
         ```
       * ###### The `docker save -o outputFileName.tar imageName`  , `docker save`, is a command used to convert Docker images to an archive file. This command is used to export images and move them to a different environment (for example, to another Docker installation or a server). `-o outputFileName.tar`  is the name and extension of the file where the exported images will be saved. `imageName`  is the name or ID of the Docker image to be exported.
-      * ###### This command saves the specified image by converting it to a .tar archive file. You can then upload this archive file to another Docker environment with the `docker load`  command.
+      * ###### This command saves the specified image into a .tar archive file. You can later load this archive file into another Docker environment using the `docker load`  command.
         ```
         docker save -o outputFileName.tar imageName
         ```
