@@ -17,7 +17,7 @@
    * [What is a Container ?](#wiac)
    * [What is Hypervisor (VM) ?](#wihvm)
    * [Differences and Advantages of Containers and Hypervisors](#daaocah)
-3. [What are Docker Engine and Tools?](#wadeat)
+3. [What are Docker Engine and Tools ?](#wadeat)
    * [What is the Docker Engine ?](#witaee)
    * [What is a Docker Daemon ?](#wiaddd)
    * [What is Docker CLI (Command Line Interface) ?](#widclicli)
@@ -25,6 +25,12 @@
    * [What is Dockerfile Structure and What are its Features ?](#widsawaif)
    * [What is Docker Image ?](#widiii)
    * [Creating and Managing Docker Images](#camdi)
+5. [What are Docker Hub, Registry, Repository and Client ?](#wadhrrac)
+   * [What is Docker Hub and How are Private Repositories Processed ?](#widhahappp)
+   * [What is Docker Registry and What Does It Do ?](#widrawdid)
+   * [What is Docker Repository(Center Where Images are Stored) ?](#widrcwias)
+   * [What are Docker Registry and Repository Differences ?](#wadrard)
+   * [What is Docker Client ?](#widcccc)
 
 
 #### What is Docker and Why Do We Need It ? <a name="widawdwni"></a>
@@ -190,6 +196,85 @@
         ```
   * ###### Creatings and Managings Docker Images <a name="camdi"></a>
       * ###### Docker images are created through text files called Dockerfiles. These files specify how to assemble the operating system, libraries, dependencies and other components that the application needs. Using the Docker CLI (Command Line Interface), these Dockerfiles are processed with the build command and the image is created. The created images are managed by the Docker daemon. These images can be stored locally or shared in remote storage areas such as Docker Hub. Also, images can be listed, deleted, updated and managed with Docker CLI.
+
+
+#### What are Docker Hub, Registry, Repository and Client ? <a name="wadhrrac"></a>
+  * ###### What is Docker Hub and How are Private Repositories Processed ? <a name="widhahappp"></a>
+    * ###### What is Docker Hub ?
+      * ###### Docker Hub is a cloud-based platform where users store, share and manage Docker containers. This platform allows users to explore ready-made container images and easily share images they create themselves. It is a platform with a large image collection.
+      * ###### Docker Hub, as we are familiar from Github, is an open source space where docker images can be uploaded and downloaded.
+    <h1 align="center">
+    <p>
+        <img height="350" width="650" src="https://github.com/farukdll/Docker/assets/97880185/52876ae3-5a91-421c-9693-b99871677d3f">
+    </h1> <p> </p>
+    
+    * ###### What is a Private Warehouse ?
+      * ###### Private repositories are repositories where Docker images are stored privately and can only be accessed by specific users or organizations. Ideal for internal use or special projects.
+    * ###### Install Docker Images in Private Repository :
+      * ###### Create your images on your local machine or use an existing image.
+      * ###### Label your Docker image  :  `docker tag local-image:tagname repo-name:tagname`
+      * ###### Load to private warehouse  :  `docker push repo-name:tagname`
+  * ###### What is Docker Registry and What Does It Do ? <a name="widrawdid"></a>
+    * ###### Docker Registry is a place where Docker images are stored and is usually the structure where Docker repositories are hosted. It is used to store and manage Docker images. Docker Hub is one of these registries and is usually publicly available. However, companies or users can create their own private Docker Registry.
+    * ###### For example, let's say you want to store Docker images of a custom software in-house. Instead of storing these images in a public repository like Docker Hub, you can create your own private Docker Registry for internal use. This can be useful for meeting internal privacy requirements and storing private images in-house. This private registry can host images specific to your company and provide access with authorization.
+    * ###### So, the Docker Registry is the structure where Docker images are stored and managed and can be public repositories like Docker Hub as well as private repositories. These repositories are used to manage, store and deploy Docker images.
+    <h1 align="center">
+    <p>
+        <img height="330" width="650" src="https://github.com/farukdll/Docker/assets/97880185/7fda3ced-818d-4c70-9f8a-b136aed4e414">
+    </h1> <p> </p>
+
+  * ###### What is Docker Repository(Center Where Images are Stored) ? <a name="widrcwias"></a>
+    * ###### Docker repositories are virtual storage spaces where Docker images are stored and shared. These repositories are centers where users can find ready-made images and store their own images.
+    * ###### Public repositories like Docker Hub offer a large collection of images. This includes operating system images, popular services, compiled versions of software languages and more. These repositories enable the Docker community to share experiences and exchange images with each other.
+    * ###### Private repositories are also important. Custom repositories are used to store and manage your own images, with special configurations for internal use, specific application versions or for security reasons.
+    * ###### These repositories support the portable and flexible nature of Docker. Sharing, storing and accessing images becomes more seamless and efficient. It also brings together the experiences of the Docker community and streamlines software development processes.
+    * ###### For example, to pull an Ubuntu image from the Docker Repository, you can type the following command in the terminal: `docker pull ubuntu`  is used to pull the specified image into your local Docker environment.
+      ```
+      docker pull ubuntu
+      ```
+    * ###### You can then use the following command to run this image in a local container  :  `docker run`  is the command to start a container in Docker.
+      ```
+      docker run
+      ```
+    * ###### `docker run -it ubuntu`  command is  `it` : These flags create an interactive terminal connection. `i`  flag allows interaction with the standard input. `t`  flag provides the terminal connection. `ubuntu`  The name of the image to be initialized. In this case, the "ubuntu" image is initialized.
+      ```
+      docker run -it ubuntu
+      ```
+  * ###### What are Docker Registry and Repository Differences ? <a name="wadrard"></a>
+    * ###### Docker Registry :
+      * ###### Docker Registry is a structure where Docker images are physically stored and is usually where Docker Repositories are hosted.
+      * ###### Docker Registry is used to store, manage and deploy images. For example, Docker Hub is a Docker Registry that is usually publicly available.
+      * ###### By creating a private Docker Registry, you can store your private images and access them with authorization.
+      * ###### Docker Registry supports public repositories as well as private repositories. It is especially useful for meeting internal privacy requirements and storing private images.
+    * ###### Docker Repository (Image Repository) :
+      * ###### A Docker Repository is a virtual storage space where Docker images are stored and shared. These repositories are centers where users can find ready-made images and store their own images.
+      * ###### In general, they can be of two types: public repositories, such as Docker Hub, or private repositories.
+      * ###### Public repositories offer a large collection of images and allow the Docker community to share their experiences. It includes many different images such as operating system images, popular services, compiled software language versions, etc.
+      * ###### Private repositories are where special images are stored for a specific user or organization. Ideal for internal use, security requirements or special projects.
+      * ###### Docker Repository makes images portable and flexible. Storing, sharing and accessing images becomes easier and more efficient. It is a tool to share the knowledge of the Docker community.
+    * ###### To Summarize :
+      * ###### Docker Repository is the virtual storage where images are stored and shared; Docker Registry is the physical storage of these images and is used for repository management. Registry is the structure where repositories are hosted, and repositories are the places where images are stored.
+      * ###### Images from Docker Hub are stored in a "repository". This repository is actually a place where images are located. These images are stored in a system called Docker Registry. The Registry is a place where Docker images are stored and distributed.
+      * ###### So, when you take images from a place like Docker Hub and upload them to your own system, these images are actually registered in the Docker Registry. This registry contains details such as which repository the image is in, which tags it is associated with. In this way, by keeping your Docker images on the Docker Registry, you can pull and use these images whenever you want.
+  * ###### What is Docker Client ? <a name="widcccc"></a>
+    * ###### Docker Client is Docker's user interface and a tool for running Docker commands. Users send requests to the Docker Server (Docker Daemon) by entering Docker commands through Docker Client.
+    * ###### Docker Client is usually run through the terminal or command line and performs various operations on the Docker Server with Docker commands.
+    <h1 align="center">
+    <p>
+        <img height="320" width="700" src="https://github.com/farukdll/Docker/assets/97880185/0604e165-c0b6-4844-ac3d-5430fddec595">
+    </h1> <p> </p>
+    
+    * ###### Functions of the Docker Client :
+      * ###### Image Management :
+        * ###### Docker Client can search, download, upload, list images from Docker Hub or other Docker Registries.
+      * ###### Container Operations :
+        * ###### It can perform operations such as creating, starting, stopping, lifting and checking the condition of containers.
+      * ###### Network Management :
+        * ###### It can create, list, connect or disconnect networks from containers.
+      * ###### Storage Management :
+        * ###### Can perform storage management operations such as creating, connecting and listing storage volumes.
+      * ###### System Information and Control :
+        * ###### Provides information about the Docker configuration on the system, monitors resource utilization and can perform control operations on the Docker Daemon.
 
 
 |[ ⬆︎  Up](#up)|
