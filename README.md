@@ -31,6 +31,9 @@
    * [What is Docker Repository(Center Where Images are Stored) ?](#widrcwias)
    * [What are Docker Registry and Repository Differences ?](#wadrard)
    * [What is Docker Client ?](#widcccc)
+6. [What is Docker Compose and Service Management ?](#wwidcasm)
+   * [What is Docker Compose ?](#wwidcs)
+   * [Docker Compose File Structure and Usage](#wdcfsau)
 
 
 #### What is Docker and Why Do We Need It ? <a name="widawdwni"></a>
@@ -259,6 +262,19 @@
   * ###### What is Docker Client ? <a name="widcccc"></a>
     * ###### Docker Client is Docker's user interface and a tool for running Docker commands. Users send requests to the Docker Server (Docker Daemon) by entering Docker commands through Docker Client.
     * ###### Docker Client is usually run through the terminal or command line and performs various operations on the Docker Server with Docker commands.
+    * ###### Let's explain the 3 commands you see in the image below for the client :
+      * ###### `docker push`  allows you to upload a locally created Docker image to a remote Docker repository. That is, it is used to push an image you created on your local machine to a repository like Docker Hub.
+        ```
+        docker push user_name/image_name
+        ```
+      * ###### `docker pull`  allows you to download a Docker image from a remote Docker repository (usually Docker Hub) to your local machine. That is, it is used to pull images created by others to your machine.
+        ```
+        docker pull user_name/image_name
+        ```
+      * ###### `docker run`  is used to start a new container from a Docker image. That is, it creates and runs an executable container based on an image.
+        ```
+        docker run user_name/image_name
+        ```
     <h1 align="center">
     <p>
         <img height="320" width="700" src="https://github.com/farukdll/Docker/assets/97880185/0604e165-c0b6-4844-ac3d-5430fddec595">
@@ -275,6 +291,66 @@
         * ###### Can perform storage management operations such as creating, connecting and listing storage volumes.
       * ###### System Information and Control :
         * ###### Provides information about the Docker configuration on the system, monitors resource utilization and can perform control operations on the Docker Daemon.
+
+
+#### What is Docker Compose and Service Management ? <a name="wwidcasm"></a>
+  * ###### What is Docker Compose ? <a name="wwidcs"></a>
+    * ###### Docker Compose is a tool in Docker that brings together multiple containers into a single configuration file. This file contains the configuration of each container, the images to use, connections and other settings. That is, it specifies step by step how the different components (e.g. web server, database) will work. This way, you can manage and run your project more easily with Docker Compose.
+    * ###### For example, if you use multiple services and different database, monitoring tools and cache services in your application, you don't need to start the application to connect these services each time. Instead, Docker Compose automatically starts these services with the configurations you have predefined. This allows your app to connect to these services seamlessly.
+    <h1 align="center">
+    <p>
+        <img height="210" width="750" src="https://github.com/farukdll/Docker/assets/97880185/08defa4f-2926-49a9-a3f5-ae5cd381d080">
+    </h1> <p> </p>
+  * ###### Docker Compose File Structure and Usage <a name="wdcfsau"></a>
+    * ###### Docker Compose File Structure :
+      * ###### Docker Compose is usually configured in a file called `docker-compose.yml` . This file specifies the configuration of each container in your project. How the containers work, which images to use, connections and other settings are contained in this file. This structure specifies step by step how different components (e.g. web server, database) are put together.
+      * ###### At the core of Docker Compose, a file called `docker-compose.yml`  is used to configure and manage Docker containers, much like Dockerfile does. This YML file has a structure that Docker Compose understands and specifies how to configure the services (e.g. web server, database) in the project.
+      * ###### So, just like Dockerfile is used to create a Docker image, `docker-compose.yml`  is used to configure multiple services (containers). This file specifies step by step how the services (images, connections, environment variables, etc.) in the project will work. This is the core principle of Docker Compose, which allows you to easily manage the project from a single file.
+    * ###### Docker Compose Service Usage :
+      * ###### Docker Compose allows us to specify the properties of each service in detail.
+      * ###### You can decide which image or Dockerfile the service will use.
+      * ###### You can specify which port numbers to use.
+      * ###### You can specify which services to associate files or folders with.
+      * ###### You can clearly define which other services the service will connect with.
+    * ###### Docker Compose .YML File :
+      ```
+      version: '3.8'
+
+      services:
+        webapp:
+          image: nginx:latest
+          ports:
+            - "8080:80"
+          networks:
+            - mynetwork
+          
+        database:
+          image: mysql:latest
+          environment:
+            MYSQL_ROOT_PASSWORD: mysecretpassword
+          networks:
+            - mynetwork
+                
+      networks:
+        mynetwork:
+          driver: bridge
+      ```
+    * ###### In the example above, two services are defined in the `.yml`  file: one for `webapp`  and one for `database`. While Nginx image is used for `webapp`  service, MySQL image is used for `database`  service. In addition, details such as which ports these services use and on which network they communicate are also specified.
+    * ###### Using the `.yml`  file, you can run `docker-compose up`  to make all these services stand up and work together. This allows you to easily manage all the Docker services you need while developing your project in a single file.
+    * ###### Let's explain the service definitions of .yml file above :
+      * ###### `version: '3.8'`  Specifies the Docker Compose version of this YAML file. It defines the properties and available configurations of a specific Docker Compose version.
+      * ###### `services`  This is where the services managed with Docker Compose start. Each service is identified by the configuration specified under it.
+      * ###### `webapp`  Specifies the name of a service. This is the name of the service that will run in the project.
+        * ###### `image: nginx:latest:`  Specifies the image to use for this service. In this case, the latest version of the image named nginx is used.
+        * ###### `ports`  Specifies which port the service will communicate with the outside world and which port will be forwarded to which port. For example, port `8080`  is accessible from the outside and is forwarded to port 80 inside the container.
+        * ###### `networks:`  Specifies on which network the service will communicate. In this example, the network named mynetwork is used.
+      * ###### `database:`  A second service instance.
+        * ###### `image: mysql:latest:`  Uses the latest version of the MySQL image for this service.
+        * ###### `environment:`  Sets specific environment variables for the service. Here, for MySQL, an environment variable named `MYSQL_ROOT_PASSWORD` is defined and its value is `mysecretpassword`.
+        * ###### `networks:`  The network configuration is the same for this service, i.e. the network named `mynetwork` is used.
+      * ###### `networks:`  This is the section where Docker networks are configured.
+        * ###### `mynetwork:`  Creates a network that allows the services in this YAML file to meet on the same network. it is a `bridge` type network and allows communication between services.
+
 
 
 |[ ⬆︎  Up](#up)|
