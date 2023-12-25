@@ -358,7 +358,7 @@
 
 #### What is Docker Volume and Data Management ? <a name="widvadm"></a>
   * ###### What is Docker Volume ? <a name="wiidv"></a>
-    * Docker Volume is a mechanism for sharing and storing data between containers. Basically, this feature persists data within the container and allows data to be stored regardless of the lifetime of the containers.
+    * ###### Docker Volume is a mechanism for sharing and storing data between containers. Basically, this feature persists data within the container and allows data to be stored regardless of the lifetime of the containers.
   * ###### Importance and Structure of Docker Volume Usage <a name="iasodvu"></a>
     * ###### The Importance of Volume Utilization :
       * ###### Data is permanently stored even when containers are started, stopped or deleted. This prevents data loss.
