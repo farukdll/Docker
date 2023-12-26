@@ -38,6 +38,9 @@
    * [What is Docker Volume ?](#wiidv)
    * [Importance and Structure of Docker Volume Usage](#iasodvu)
    * [Docker Data Persistence and Data Management Strategies](#ddpadms)
+8. [What is Docker Network Configuration ?](#widnccn)
+   * [How to Create and Configure Docker Networks ?](#htcacdn)
+   * [What are Safety and Isolation Principles ?](#wasaips)
 
 
 #### What is Docker and Why Do We Need It ? <a name="widawdwni"></a>
@@ -377,6 +380,27 @@
       * ###### Data should be backed up periodically and these backups should be stored securely.
       * ###### Creating separate volumes for different data types or applications ensures data isolation and maintains data integrity.
 
+
+#### What is Docker Network Configuration ? <a name="widnccn"></a>
+  * ###### How to Create and Configure Docker Networks ? <a name="htcacdn"></a>
+    * ###### Creating Docker Networks :
+      * ###### Bridge Networks   :  Docker's default network. Every container connects to this network by default. This network is isolated from the host machine.
+      * ###### Overlay Networks  :  It is used to connect multiple Docker hosts together. It provides communication between containers on multiple hosts.
+      * ###### Macvlan Networks  :  Provides direct connectivity to physical network interfaces. Containers can act directly as physical network devices.
+      * ###### Custom Networks   :  They are networks that are custom-built by the user. It can be used to meet the specific requirements of containers.
+    * ###### Configuring Docker Networks :
+      * ###### Subnet and IP Addresses  :  Each network has a subnet with a specific range of IP addresses and containers are assigned one of these IP addresses.
+      * ###### DNS Configuration        :  Networks can have their own DNS configurations so that containers can access each other by DNS names.
+      * ###### Connections and Contact  :  Containers can communicate and share data with each other through networks.
+  * ###### What are Safety and Isolation Principles ? <a name="wasaips"></a>
+    * ###### Security :
+      * ###### Network Isolation    : Tight isolation is maintained between different networks so that network traffic can be kept under control.
+      * ###### Network Segmentation : Different network segments can be managed with different security rules and policies.
+    * ###### Isolation :
+      * ###### Container Insulation : Each network provides its own isolation and containers within the network cannot interact directly with other networks.
+      * ###### Network Security     : Enhances network security by providing network configuration, firewalls, network policies and access control.
+  * ###### To Summarize :
+    * ###### Docker network configuration is important for organizing communication between containers and ensuring security/isolation. Network configuration ensures that containers are isolated on separate networks and that security policies are applied so that a more secure structure can be created throughout the system. In this way, data sharing and communication between containers can be kept under control.
 
 
 |[ ⬆︎  Up](#up)|
