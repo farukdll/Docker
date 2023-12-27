@@ -41,6 +41,9 @@
 8. [What is Docker Network Configuration ?](#widnccn)
    * [How to Create and Configure Docker Networks ?](#htcacdn)
    * [What are Safety and Isolation Principles ?](#wasaips)
+9. [What is Docker Security and Best Practices ?](#widsabp)
+   * [What are Docker Security Policies and Practices ?](#wadspap)
+   * [Sensitive Information Management and Env File Usage](#simaefu)
 
 
 #### What is Docker and Why Do We Need It ? <a name="widawdwni"></a>
@@ -401,6 +404,29 @@
       * ###### Network Security     : Enhances network security by providing network configuration, firewalls, network policies and access control.
   * ###### To Summarize :
     * ###### Docker network configuration is important for organizing communication between containers and ensuring security/isolation. Network configuration ensures that containers are isolated on separate networks and that security policies are applied so that a more secure structure can be created throughout the system. In this way, data sharing and communication between containers can be kept under control.
+
+
+#### What is Docker Security and Best Practices ? <a name="widsabp"></a>
+  * ###### What are Docker Security Policies and Practices ? <a name="wadspap"></a>
+    * ###### Safety Principles :
+      * ###### Image Security                           : It is important to use Docker images from trusted sources and security updates.
+      * ###### Container Isolation                      : Tight isolation between containers must be ensured and containers must be protected against security vulnerabilities.
+      * ###### Host Security                            : Docker on the host must be configured correctly and kept up to date.
+      * ###### Security Monitoring and Monitoring Tools : Safety monitoring tools should be used on containers and monitored regularly.
+    * ###### Applications :
+      * ###### Security Analysis Tools       : Tools that detect vulnerabilities on Docker images and containers should be used.
+      * ###### Tracking Updates              : Docker images and containers should be kept up-to-date and security updates should be applied regularly.
+      * ###### Isolation and Access Controls : Docker network configuration and access control should be organized, isolation should be ensured and access controls should be applied.
+  * ###### Sensitive Information Management and Env File Usage <a name="simaefu"></a>
+    * ###### Management of Sensitive Information :
+      * ###### Env Files      : Sensitive data is often managed through env (environment) files. These files are used to store and maintain environment variables.
+      * ###### Env File Usage : Env files are especially ideal for storing sensitive information such as secret keys, passwords, API keys, etc. These files are usually located in the root directory of the project and are stored as .env.
+    * ###### Best Practices :
+      * ###### Env File Security               : Env files should be carefully protected for security reasons and should not be added to the version control system.
+      * ###### Isolating Sensitive Information : When transferring Env files to containers within Docker, sensitive information should not be shared in an uncontrolled way.
+      * ###### Env File Encryption             : Storing sensitive data encrypted in env files is important for security.
+  * ###### To Summarize :
+    * ###### Security, updating, isolation and sensitive data management form the basis of best practices in Docker. Secure storage of sensitive data, proper management of env files, and continuous monitoring of security practices are important to ensure security in a Docker environment. Management in accordance with these principles increases the security of the Docker environment and reduces potential security risks.
 
 
 |[ ⬆︎  Up](#up)|
