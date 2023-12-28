@@ -44,6 +44,10 @@
 9. [What is Docker Security and Best Practices ?](#widsabp)
    * [What are Docker Security Policies and Practices ?](#wadspap)
    * [Sensitive Information Management and Env File Usage](#simaefu)
+10. [Docker Web Server and Protocols ?](#dwsaps)
+    * [What is NGINX ? What are the Uses and Features of NGINX ?](#winwatuafon)
+    * [TLS Protocols and Security Applications](#tlspasas)
+
 
 
 #### What is Docker and Why Do We Need It ? <a name="widawdwni"></a>
@@ -427,6 +431,34 @@
       * ###### Env File Encryption             : Storing sensitive data encrypted in env files is important for security.
   * ###### To Summarize :
     * ###### Security, updating, isolation and sensitive data management form the basis of best practices in Docker. Secure storage of sensitive data, proper management of env files, and continuous monitoring of security practices are important to ensure security in a Docker environment. Management in accordance with these principles increases the security of the Docker environment and reduces potential security risks.
+
+
+#### Docker Web Server and Protocols ? <a name="dwsaps"></a>
+  * ###### What is NGINX ? What are the Uses and Features of NGINX ? <a name="winwatuafon"></a>
+    * ###### What is NGINX ?
+      * ###### NGINX is an open source web server and reverse proxy server software. It is particularly known for its performance and scalability. It is commonly used for high-traffic websites, content delivery networks (CDNs), reverse proxy and load balancer.
+    * ###### Using NGINX :
+      * ###### NGINX is often used as a web server. It is a tool for serving websites, applications or APIs to clients. It can also be used as a load balancer or reverse proxy. It is managed with configuration files and by editing these files, the desired features can be activated.
+    * ###### Features of NGINX :
+      * ###### It is known for its high performance. It can process and serve requests from clients quickly.
+      * ###### It has traffic routing and load balancing features, which ensures traffic balance between different servers.
+      * ###### Reverse Proxy Receives incoming requests, forwards them to the content server and returns the responses back to the client.
+      * ###### Ideal for serving static files (HTML, CSS, JavaScript). It relieves server load by caching these files.
+      * ###### Provides TLS/SSL encryption for secure connections.
+      * ###### It can be extended with different modules and plugins, which allows for customizability.
+  * ###### TLS Protocols and Security Applications <a name="tlspasas"></a>
+    * ###### What is TLS ?
+      * ###### TLS (Transport Layer Security) is a security protocol used to encrypt communication over the internet. During data transmission, it ensures that data is transmitted securely and confidentially. The previous version of TLS was SSL (Secure Sockets Layer).
+    * ###### What are Security Practices :
+      * ###### It enables data to be transmitted encrypted, thus preventing third parties from accessing the data.
+      * ###### The authentication process between the server and the client establishes a trusted connection.
+      * ###### It protects the integrity of the transferred data and prevents any modification of the data.
+      * ###### Certificates are used to authenticate servers and ensure reliability.
+    * ###### Security Protocols :
+      * ###### TLS 1.2 and TLS 1.3: They offer the latest security features and enhancements. TLS 1.3 provides faster and more secure communication.
+  * ###### To Summarize :
+    * ###### NGINX is a web server and reverse proxy server known for its performance and scalability. TLS protocols are encryption protocols used to secure communication on the internet. These protocols provide a secure and performant structure for websites and applications.
+
 
 
 |[ ⬆︎  Up](#up)|
