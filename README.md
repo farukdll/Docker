@@ -47,6 +47,15 @@
 10. [Docker Web Server and Protocols ?](#dwsaps)
     * [What is NGINX ? What are the Uses and Features of NGINX ?](#winwatuafon)
     * [TLS Protocols and Security Applications](#tlspasas)
+11. [Docker Database and Application Setup ?](#ddappsp)
+    * [How Docker Database and Application Setup Works :](#hddapsws)
+    * [What is MariaDB ?](#wimdb)
+    * [What is WordPress ?](#wiowpss)
+    * [What is the Relationship between MariaDB and WordPress ?](#witrbmawpss)
+    * [Running MariaDB on Docker and WordPress Database Integration](#rmodawdin)
+    * [Database Management and Configuration :](#dmacgon)
+    * [Database Security :](#dtbsscrty)
+    * [Database Connectivity with Docker Compose :](#dcwdspse)
 
 
 
@@ -458,6 +467,45 @@
       * ###### TLS 1.2 and TLS 1.3: They offer the latest security features and enhancements. TLS 1.3 provides faster and more secure communication.
   * ###### To Summarize :
     * ###### NGINX is a web server and reverse proxy server known for its performance and scalability. TLS protocols are encryption protocols used to secure communication on the internet. These protocols provide a secure and performant structure for websites and applications.
+
+
+#### Docker Database and Application Setup ? <a name="ddappsp"></a>
+  * ###### How Docker Database and Application Setup Works : <a name="hddapsws"></a>
+    * ###### Creating the MariaDB (Database) Container :
+      * ###### First, the MariaDB container is created using tools such as Docker Compose or Docker CLI.
+      * ###### If Docker Compose is used, a service is defined in the `docker-compose.yml`  file and the MariaDB image for this service is specified. The required configuration (e.g. database name, username, password) is specified here.
+      * ###### If Docker CLI is used, the MariaDB image is run with the `docker run`  command in the terminal and the necessary configurations are specified in this command.
+    * ###### Creating and Connecting to a WordPress (Application) Container :
+      * ###### The WordPress application is likewise run as a container in Docker.
+      * ###### If Docker Compose is used, a WordPress service is defined in the same file. The WordPress image is specified for this service and the necessary settings are made to connect with the MariaDB container.
+      * ###### If using Docker CLI, the WordPress image is started as a separate container in the terminal. To be able to communicate with MariaDB, a connection between the networks is provided.
+    * ###### Providing Connectivity and Managing Database Content :
+      * ###### Since the WordPress container is on the same network as the MariaDB container, it can communicate with the database.
+      * ###### During the installation process of WordPress, the user is prompted for database connection information, which communicates with the MariaDB container on the Docker network to connect to the database.
+      * ###### The management and storage of WordPress' content takes place in the MariaDB database running on Docker. This content is stored and processed in the MariaDB container.
+    * ###### Safety and Management :
+      * ###### Database management is usually done with MariaDB's command line tool or graphical interfaces. Data manipulation and management operations are performed with SQL queries.
+      * ###### Security is based on factors such as database access permissions, password strengthening and network access controls. The MariaDB container and database are protected by these security measures.
+    * ###### To Summarize :
+      * ###### When configured using Docker Compose, all these steps are usually written in a file (e.g. docker-compose.yml) and this file is run with Docker Compose to bring the containers together. Each container integrates with each other by communicating over Docker networks and the application can work seamlessly with the database. In this way, application and database installation is realized in the Docker environment.
+  * ###### What is MariaDB ? <a name="wimdb"></a>
+    * ###### MariaDB is an open source offshoot of MySQL and is a relational database management system (RDBMS). It is derived from MySQL and offers the same features. It is often used as the underlying database of web-based applications and sites.
+  * ###### What is WordPress ? <a name="wiowpss"></a>
+    * ###### WordPress is an open source content management system (CMS) based on PHP. It is used to create websites and blogs. It integrates with databases such as MySQL or MariaDB to store and serve content.
+  * ###### What is the Relationship between MariaDB and WordPress ? <a name="witrbmawpss"></a>
+    * ###### WordPress allows users to create and manage content. This content is stored in a database, usually powered by MariaDB or MySQL. WordPress needs a database to function and MariaDB or MySQL is usually preferred.
+  * ###### Running MariaDB on Docker and WordPress Database Integration <a name="rmodawdin"></a>
+    * ###### MariaDB can be run as a container in Docker. A MariaDB image can be created and run using Docker Compose or Docker CLI.
+    * ###### WordPress is run as a separate container inside Docker, which can use the database by networking with the MariaDB container.
+  * ###### Database Management and Configuration : <a name="dmacgon"></a>
+    * ###### The necessary configurations for running MariaDB in Docker are made in Dockerfile or Docker Compose files. In these files, configurations such as database name, username, password are defined.
+    * ###### Database management is usually done through SQL queries or interfaces. MariaDB's command line tool or graphical interfaces can be used.
+  * ###### Database Security : <a name="dtbsscrty"></a>
+    * ###### MariaDB's security is based on factors such as user authorization, password strengthening, network access control. The database can be protected with firewalls or authorization controls.
+  * ###### Database Connectivity with Docker Compose : <a name="dcwdspse"></a>
+    * ###### Docker Compose enables MariaDB and WordPress containers to run on the same network. In this way, the WordPress container can connect to the MariaDB container over the network and use the database.
+  * ###### To Summarize :
+    * ###### MariaDB is an open source RDBMS and is often used as the database for applications such as WordPress. Running MariaDB on Docker and its integration with WordPress can be done using Docker Compose or Docker CLI. Database management, security and configuration are typically configured in Docker files and supported by security applications. Docker Compose ensures that MariaDB and WordPress containers are on the same network so that WordPress can access the database. In this way, database and application installation can be performed seamlessly in a Docker environment.
 
 
 
