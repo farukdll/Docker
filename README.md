@@ -56,6 +56,9 @@
     * [Database Management and Configuration :](#dmacgon)
     * [Database Security :](#dtbsscrty)
     * [Database Connectivity with Docker Compose :](#dcwdspse)
+12. [What is Docker DNS Configuration and Domain Names ?](#widdnscadns)
+    * [Domain Routing and DNS Configuration](#dradnscn)
+    * [Use and Importance of Domain Names](#uaiodns)
 
 
 
@@ -506,6 +509,20 @@
     * ###### Docker Compose enables MariaDB and WordPress containers to run on the same network. In this way, the WordPress container can connect to the MariaDB container over the network and use the database.
   * ###### To Summarize :
     * ###### MariaDB is an open source RDBMS and is often used as the database for applications such as WordPress. Running MariaDB on Docker and its integration with WordPress can be done using Docker Compose or Docker CLI. Database management, security and configuration are typically configured in Docker files and supported by security applications. Docker Compose ensures that MariaDB and WordPress containers are on the same network so that WordPress can access the database. In this way, database and application installation can be performed seamlessly in a Docker environment.
+
+
+#### What is Docker DNS Configuration and Domain Names ? <a name="widdnscadns"></a>
+  * ###### Domain Routing and DNS Configuration <a name="dradnscn"></a>
+    * ###### DNS (Domain Name System) is a system that translates domain names (domain names) on the internet into IP addresses. This translates domain names that humans can understand into IP addresses that computers can understand.
+    * ###### The DNS configuration determines to which IP address a domain name is routed. This determines which IP address a website, a server or a service will connect to.
+  * ###### Use and Importance of Domain Names <a name="uaiodns"></a>
+    * ###### Domain names allow people to access resources on the internet. For example, a domain name such as www.example.com can be used to access a website.
+    * ###### Domain names are easier to remember and more user-friendly than IP addresses. They are easier for people to keep in mind when accessing websites or services.
+    * ###### Domain names also allow servers, services or Docker containers to communicate with each other. This ensures that different containers running on Docker networks can access each other by name.
+    * ###### For example, IP addresses can be used to communicate between Docker containers. However, these IP addresses can change and can be complex. Instead, communication can be made easier by using domain names assigned to containers or services.
+    * ###### These configurations enable containers running on Docker networks to communicate with each other or with the outside world.
+  * ###### To Summarize :
+    * ###### DNS configuration facilitates access to resources on the internet by allowing domain names to be directed to IP addresses. Domain names are more user-friendly than IP addresses and make it easier for people to access websites or services. Using domain names to communicate between Docker containers is a more flexible and straightforward method than IP addresses. In this way, services running in the Docker environment can communicate more easily with each other and with the outside world.
 
 
 
