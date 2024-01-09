@@ -1,10 +1,10 @@
 <h1 align="right"> <a name="up"></a>
 
-### VM(Debian)-Installation-Settings Turkish Version
+#### VM(Debian)-Installation-Settings Turkish Version
 * [Turkish Version](https://glitter-muskox-81c.notion.site/Docker-VM-Debian-Kurulumu-e756fb55f9244c45b3f60dd86f50032d?pvs=4)
 
 
-#### VM(Debian)-Installation-Settings
+#### VM(Debian)-Installation and Settings
   <h1 align="center">
   <p>
       <img height="350" width="700" src="https://github.com/farukdll/Docker/assets/97880185/b184eaf2-7652-451f-a638-12d5ffcc1fca">
