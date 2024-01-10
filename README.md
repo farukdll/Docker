@@ -3,12 +3,12 @@
 # Docker
 <h1 align="left">
     <p> <img height="100" width="120" alt="Docker" src="https://github.com/farukdll/Docker/assets/97880185/04ad9ed4-e6e3-4e22-a2ed-bfe5f5979140"> </h1>
-<!--
+
 ### Turkish Version of the README
-* [Turkish Version]()-->
+* ###### Turkish Version [🢣 Click-Here 🢢](https://glitter-muskox-81c.notion.site/Docker-Kavramlar-26445d0f84ad47078d28e422e0989ebf?pvs=4)
 
 
-## Table of Contents
+### Table of Contents
 1. [What is Docker and Why Do We Need It ?](#widawdwni)
    * [What is Docker ?](#wid)
    * [Why Do We Need Docker ?](#wdwnd)
@@ -82,6 +82,7 @@
     * ###### Containers are isolated working environments at the operating system level. Each Container contains everything an application or service needs to run: files, libraries, settings and other components necessary for the application to run.
     * ###### This isolation allows each Container to run independently of the others. That is, the application in one Container does not affect the application in another Container. This makes it possible to run applications in a more secure, portable and efficient way.
     * ###### Containers enable developers to avoid compatibility issues when moving their applications to different environments. They also make software development processes more efficient by enabling faster deployment, scaling and management.
+    * ###### We can think of it as the process we get when we run any image.
     <h1 align="center">
     <p>
         <img height="210" width="750" src="https://github.com/farukdll/Docker/assets/97880185/6852b36d-6e4e-4b3a-bd79-ee5b2f6ed855">
