@@ -200,7 +200,7 @@
         ```
       * ###### The `docker rmi imageName`  is used to delete an image with a name specified in Docker. The name or ID of the image to be deleted is specified with the command. This command will permanently delete the specified image.
         ```
-        docker rmi imageName
+        docker rmi imageName / docker rm imageName / docker rm -f imageName/
         ```
       * ###### The `docker build -t imageName path/to/Dockerfile`  is used to create Docker images. This command creates an image by following the steps specified in the file called Dockerfile. It is typically used to convert project files into an image. The `-t`  flag allows you to give the created image a name. `imageName`  is the name of the image to be created. `path/to/Dockerfile`  specifies the path to the Dockerfile.
         ```
