@@ -1,8 +1,7 @@
 <h1 align="right"> <a name="up"></a>
 
-#### VM(Debian)-Installation-Settings Turkish Version
-* [Turkish Version](https://glitter-muskox-81c.notion.site/Docker-VM-Debian-Kurulumu-e756fb55f9244c45b3f60dd86f50032d?pvs=4)
-
+#### VM(Debian) Installation and SSH Settings Turkish Version
+* ###### Turkish Version [⇨ Click-Here ⇦](https://glitter-muskox-81c.notion.site/Docker-VM-Debian-Kurulumu-e756fb55f9244c45b3f60dd86f50032d?pvs=4)
 
 #### VM(Debian)-Installation and Settings
   <h1 align="center">
@@ -10,7 +9,7 @@
       <img height="350" width="700" src="https://github.com/farukdll/Docker/assets/97880185/b184eaf2-7652-451f-a638-12d5ffcc1fca">
   </h1> <p> </p>
 
-  * ###### VirtualBox official website [🢣 Click-Here 🢢](https://www.virtualbox.org/wiki/Downloads)
+  * ###### VirtualBox official website [⇨ Click-Here ⇦](https://www.virtualbox.org/wiki/Downloads)
   * ###### First of all, enter the VirtualBox official web page via the link above and download VirtualBox according to the operating system of the computer you are using.
   * ###### Then install VirtualBox on your computer.
   
@@ -19,7 +18,7 @@
       <img height="220" width="700" src="https://github.com/farukdll/Docker/assets/97880185/11c49430-0489-4125-a3cb-7e3330f222c5">
   </h1> <p> </p>
 
-  * ###### Debian official website [🢣 Click-Here 🢢](https://www.debian.org/download)
+  * ###### Debian official website [⇨ Click-Here ⇦](https://www.debian.org/download)
   * ###### Then go to Debian`s official website via the link above and download the latest version ISO file.
 
   <h1 align="center">
