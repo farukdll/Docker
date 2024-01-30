@@ -5,7 +5,7 @@
     <p> <img height="100" width="120" alt="Docker" src="https://github.com/farukdll/Docker/assets/97880185/04ad9ed4-e6e3-4e22-a2ed-bfe5f5979140"> </h1>
 
 ### Turkish Version of the README
-* ###### Turkish Version [🢣 Click-Here 🢢](https://glitter-muskox-81c.notion.site/Docker-Kavramlar-26445d0f84ad47078d28e422e0989ebf?pvs=4)
+* ###### Turkish Version [⇨ Click-Here ⇦](https://glitter-muskox-81c.notion.site/Docker-Kavramlar-26445d0f84ad47078d28e422e0989ebf?pvs=4)
 
 
 ### Table of Contents
@@ -164,7 +164,7 @@
     </h1> <p> </p>
     
     * ###### You can access the Docker Image list from this link (DockerHub Official Site)
-      * ###### [🢣 Click-Here 🢢](https://hub.docker.com/search?q=&type=image)
+      * ###### [⇨ Click-Here ⇦](https://hub.docker.com/search?q=&type=image)
     * ###### Docker Image commands:
       * ###### The `docker images`  is used to list the Docker images available locally on your computer. When this command is run, all images on the system are listed, depending on the Docker Engine.
         ```
