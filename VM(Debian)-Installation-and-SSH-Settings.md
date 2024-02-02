@@ -1,8 +1,5 @@
 <h1 align="right"> <a name="up"></a>
 
-#### VM(Debian) Installation and SSH Settings Turkish Version
-* ###### Turkish Version [⇨ Click-Here ⇦](https://glitter-muskox-81c.notion.site/Docker-VM-Debian-Kurulumu-e756fb55f9244c45b3f60dd86f50032d?pvs=4)
-
 #### VM(Debian)-Installation and Settings
   <h1 align="center">
   <p>
