@@ -52,9 +52,77 @@ services:
     ports:
       - "443:443"
     depends_on:
-      - wordpress
+      - mariadb
     volumes:
       - wp:/var/www/html
     networks:
       - app-network
     restart: always
+
+  ftp:
+    container_name: ftp
+    build: ./requirements/bonus/ftp
+    env_file:
+      - ./.env
+    networks:
+      - app-network
+    depends_on:
+      - nginx
+    restart: unless-stopped
+    volumes:
+      - wp:/var/www/html
+    ports:
+      - "21:21"
+      - "21100-21110:21100-21110"
+  
+  adminer:
+    container_name: adminer
+    build: ./requirements/bonus/adminer
+    env_file:
+      - ./.env
+    networks:
+      - app-network
+    depends_on:
+      - mariadb
+    restart: unless-stopped
+    ports:
+      - "8090:8090"
+
+  redis:
+    container_name: redis
+    build: ./requirements/bonus/redis
+    env_file:
+      - ./.env
+    networks:
+      - app-network
+    depends_on:
+      - nginx
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+
+  static-website:
+    container_name: static-website
+    build: ./requirements/bonus/static-website
+    env_file:
+      - ./.env
+    networks:
+    - app-network
+    depends_on:
+      - nginx
+    restart: unless-stopped
+    ports:
+      - "8085:8085"
+
+
+  minio:
+    container_name: minio
+    build: ./requirements/bonus/minio
+    env_file:
+      - ./.env
+    networks:
+      - app-network
+    restart: unless-stopped
+    ports:
+      - "9000:9000"
+      - "9001:9001"

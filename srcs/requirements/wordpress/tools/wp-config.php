@@ -41,6 +41,13 @@ define( 'DB_COLLATE', '' );
 define('WP_CACHE', true);
 define('WP_CACHE_KEY_SALT', 'fpektas@farukdll.com');
 
+//** Try Redis container */
+define('WP_REDIS_HOST', 'redis');
+define('WP_REDIS_PORT', 6379);
+// define( 'WP_REDIS_PASSWORD', '$REDIS_PWD' );
+define('WP_REDIS_TIMEOUT', 1);
+define('WP_REDIS_READ_TIMEOUT', 1);
+define('WP_REDIS_DATABASE', 0);
 
 /**#@+
  * Authentication unique keys and salts.
