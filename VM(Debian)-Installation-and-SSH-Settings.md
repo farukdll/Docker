@@ -261,6 +261,81 @@
   * ###### `sudo systemctl status ssh`  → Let's check the status of the SSH service with the command.
   * ###### `sudo grep Port /etc/ssh/sshd_config`  → Let's view the allowed port number specified in the SSH configuration file with the command.
   * ###### `sudo service ssh restart`  → Using the command, let's restart the SSH service.
+  
+  <h1 align="center">
+  <p>
+      <img height="290" width="350" src="https://github.com/farukdll/Docker/assets/97880185/94b5a2d1-d2df-4766-b90b-869903e826af">
+      <img height="290" width="550" src="https://github.com/farukdll/Docker/assets/97880185/16c59476-fa16-4ffe-8ddc-dfc08ae28eac">
+  </h1> <p> </p>
+  
+  * ###### `sudo apt install ufw -y`  → Let's install the UFW with the command.
+  * ###### UFW is a simple and easy-to-use firewall management tool
+    * ###### UFW is used to control incoming and outgoing network traffic. This allows you to control traffic to and from your computer, so you can block unwanted access or limit access to certain services.
+  * ###### `dpkg -l | grep ufw`  → Let's check if UFW packages are installed on the system with the command.
+  
+  <h1 align="center">
+  <p>
+      <img height="300" width="450" src="https://github.com/farukdll/Docker/assets/97880185/813f1a9e-0a4c-4715-b614-077eb9039313">
+      <img height="300" width="450" src="https://github.com/farukdll/Docker/assets/97880185/da8e5212-e631-4d00-aa68-424fcb70327a">
+  </h1> <p> </p>
+  
+  * ###### `sudo ufw enable`  → Enable the UFW firewall with the command (to start the UFW Service)
+  * ###### `sudo systemctl status ufw`  → Let's check the status of the Uncomplicated Firewall (UFW) service with the command.
+    * ###### `Active : inactive (dead)`  → In the line found we see that the UFW service is not enabled
+  
+  <h1 align="center">
+  <p>
+      <img height="300" width="450" src="https://github.com/farukdll/Docker/assets/97880185/7e518a38-ee03-4384-a11c-4e2f5a1ff52d">
+      <img height="300" width="450" src="https://github.com/farukdll/Docker/assets/97880185/d8bd6106-c69d-4f03-a701-5f3e9895b972">
+  </h1> <p> </p>
+  
+  * ###### `sudo reboot`  → Reboot the system to activate the UFW service with the command.
+    * ###### Let's reboot the system with the "sudo reboot" command to ensure that the changes made to the system, settings and all services are updated.
+  * ###### `sudo systemctl status ufw`  → Let's check the status of the Uncomplicated Firewall (UFW) service with the command.
+    * ###### "Active : Active" → We see that the UFW service is active.
+  
+  <h1 align="center">
+  <p>
+      <img height="300" width="450" src="https://github.com/farukdll/Docker/assets/97880185/08634a98-af87-4b98-a921-83018187c95d">
+      <img height="300" width="450" src="https://github.com/farukdll/Docker/assets/97880185/89bdc189-75e5-43e9-a6dd-2d03a7e26f62">
+  </h1> <p> </p>
+  
+  * ###### `sudo ufw allow ssh`  → Let's allow UFW SSH access with the command.
+    * ###### "allow" → The command is a switch used to add a specific type of traffic to the allowed list.
+  * ###### `sudo ufw allow 4242`  → This command allows incoming connections on port 4242.
+
+  <h1 align="center">
+  <p>
+      <img height="300" width="450" src="https://github.com/farukdll/Docker/assets/97880185/155d1e8a-168e-4a01-b833-bb29ece5c6fd">
+      <img height="300" width="450" src="https://github.com/farukdll/Docker/assets/97880185/1b3893e1-3190-4bd4-97ea-81d05fb9bba5">
+      <img height="300" width="450" src="https://github.com/farukdll/Docker/assets/97880185/be714af3-a7ad-4ea2-b394-20706394e5f9">
+  </h1> <p> </p>
+
+  * ###### `sudo ufw status numbered`  → The command lists the allowed port numbers in an enumerated form.
+  * ###### `sudo ufw delete 1` and `sudo ufw delete 2`  → Delete port 22 on lines 1 and 2 in the list with the command.
+  * ###### `sudo systemctl restart ssh`  → Restart the SSH service with the command.
+  * ###### `sudo service ssh status`  → Let's check the status of the SSH service with the command.
+  
+  <h1 align="center">
+  <p>
+      <img height="300" width="450" src="https://github.com/farukdll/Docker/assets/97880185/34716898-687d-4e56-94ac-c7c1c79841f2">
+      <img height="300" width="450" src="https://github.com/farukdll/Docker/assets/97880185/c897f84a-bda9-4b5a-bbee-32ec1510f364">
+      <img height="300" width="450" src="https://github.com/farukdll/Docker/assets/97880185/c0180acb-73fe-4106-b056-e3a228539309">
+  </h1> <p> </p>
+  
+  * ###### Open VirtualBox, go to the "Network → Point B Routing" tab and assign the port number as 4242.
+  * ###### The SSH connection is ready, open the terminal and connect to the virtual machine with the command ssh username@localhost -p 4242.
+
+
+
+
+
+
+
+
+
+
+
 
 
 |[ ⬆︎  Up](#up)|
