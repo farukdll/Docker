@@ -1,4 +1,4 @@
-FROM debian:10
+FROM debian:bullseye
 
 RUN	apt-get update -y && apt-get install vsftpd -y
 
